@@ -1,0 +1,93 @@
+CREATE TABLE SEEKER(
+             SSN NUMBER(4) PRIMARY KEY,
+             Fname VARCHAR2(10),
+             Lname  VARCHAR2(10),
+             Pnumber NUMBER (11) NOT NULL,
+             Age     NUMBER (2), 
+             Address VARCHAR2(50) NOT NULL
+             Jid NUMBER(4) FOREIGN KEY  REFERENCES JOBS (Jid));
+            
+            
+
+
+JID FOEIGN KEY .
+                                   
+
+----------------------------------------------------------------------
+
+CREATE TABLLE SEEKER_QUALIFICATION();
+
+
+COMPOSITE
+
+---------------------------------------------------------------------
+
+CREATE TABLE  JOBS (
+   
+                 Jid NUMBER(4) PRIMARY KEY,
+                 Jname VARCHAR2(10),
+                 Salary NUMBER(4) CHECK(Salary>0),
+                 Work_hours NUMBER(2));
+
+
+
+-----------------------------------------------------------------------
+
+CREATE TABLE COMPANY (
+                    Cname VARCHAR2(10) PRIMARY KEY,
+                    Clocation  VARCHAR2(50));
+
+
+-----------------------------------------------------------------------
+
+CREATE TABLE EXIST_IN (
+               Cname VARCHAR2(10) REFERENCES COMPANY (Cname) ,              
+               Jid NUMBER(4) REFERENCES JOBS (Jid));
+               
+
+
+-----------------------------------------------------------------------
+
+CREATE TABLE WORKER_HOUSING (
+
+             Hid NUMBER(4) PRIMARY KEY , 
+             Haddress VARCHAR2(50) NOT NULL,
+             Cname VARCHAR2(10) REFERENCES COMPANY (Cname));
+
+             
+
+----------------------------------------------------------------------
+CREATE TABLE DEPENDENT (
+
+          Name VARCHAR2(10) PRIMARY KEY ,
+          Sex VARCHAR2(6) ,
+          Age NUMBER(2),
+          RS VARCHAR2(10) NOT NULL,
+          SSN NUMBER(4) REFERENCES SEEKER (SSN) );
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
+                   
+                      
+                     

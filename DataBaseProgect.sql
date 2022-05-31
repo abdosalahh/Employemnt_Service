@@ -1,0 +1,5 @@
+CREATE TABLE SEEKER_QUALIFICATION(
+      Qualifications VARCHAR2(50) ,
+      SSN NUMBER(4) REFERENCES SEEKER(SSN),
+      PRIMARY KEY (Qualifications,SSN));
+
